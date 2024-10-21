@@ -1,0 +1,115 @@
+﻿Build1=Default,b4a.example
+File1=0.jpg
+File10=9.jpg
+File11=Layout.bal
+File2=1.jpg
+File3=2.jpg
+File4=3.jpg
+File5=4.jpg
+File6=5.jpg
+File7=6.jpg
+File8=7.jpg
+File9=8.jpg
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=core
+Library2=xui
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Starter
+NumberOfFiles=11
+NumberOfLibraries=2
+NumberOfModules=1
+Version=13
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: TokoBook
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private LblTitle1 As Label
+	Private Lv1 As ListView
+	Public Judul() As String
+	Public Penulis() As String
+	Public Deskripsi() As String
+	Public Harga() As String
+	Private LblInfoBuku As Label
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	
+	Judul = Array As String("Bumi", "Don Quixote", "Harry Potter", "Hujan", "Laut Bercerita", "1Q84", "Bulan", "Matahari", "Hello", "Harga Sebuah Percaya")
+	Penulis = Array As String("Tere Liye", "Miguel De Cervantes", "JK Rowling", "Tere Liye", "Leila Salikha Chudori", "Haruki Murakami", "Tere Liye", "Tere Liye", "Tere Liye", "Tere Liye")
+	Deskripsi = Array As String("Perkenalkan, Raib, seorang gadis belia berusia lima belas tahun yang tidak biasa. Dia bisa menghilang. Jangan beritahu siapapun, Itu adalah rahasia terbesar yang tak pernah ia ceritakan pada siapapun, termasuk kedua orangtuanya. Kehidupannya tetap berjalan normal, meskipun untuk dirinya sendiri. Tidak jarang Raib menjahili orang tuanya dengan tiba-tiba menghilang, lalu muncul kembali secara tiba-tiba membuat kaget kedua orangtuanya.", _
+                                "Novel klasik dari Spanyol tentang petualangan Don Quixote", _
+                                "Cerita tentang dunia sihir yang terkenal", _
+                                "Kisah cinta di tengah bencana", _
+                                "Cerita tentang peristiwa kelam di Indonesia", _
+								"Cerita bermula ketika Aomame mengirimkan seorang lelaki yang dianggap brengsek ke dunia lain dengan cara yang amat halus. Ia bergabung dengan wanita paruh baya yang membela perempuan-perempuan lemah yang diperlakukan tidak adil oleh para lelaki brengsek. Setelah melakukan tugasnya, ia mencari pria tak dikenal dan bersetubuh untuk melepaskan kepenatannya. Ritme hidupnya seperti itu setiap hari, sampai-sampai suatu saat ia menyadari langit memiliki dua bulan, besar dan kecil.", _
+								"Petualangan Raib, Seli, dan Ali berlanjut.Beberapa bulan setelah peristiwa klan bulan, Miss Selena akhirnya muncul di sekolah. Ia membawa kabar menggembirakan untuk anak-anak yang berjiwa petualang seperti Raib, Seli, dan Ali. Miss Selena bersama dengan Av akan mengajak mereka untuk mengunjungi klan matahari selama dua minggu. Av berencana akan bertemu dengan ketua konsil klan matahari, yang menguasai klan matahari sepenuhnya untuk mencari sekutu dalam menghadapi Tamus yang diperkirakan akan bebas dan juga membebaskan raja tanpa mahkota.", _
+								"Namanya Ali, 15 tahun, kelas X. Jika saja orangtuanya mengizinkan, seharusnya dia sudah duduk di tingkat akhir ilmu fisika program doktor di universitas ternama. Ali tidak menyukai sekolahnya, guru-gurunya, teman-teman sekelasnya. Semua membosankan baginya. Tapi sejak dia mengetahui ada yang aneh pada diriku dan Seli, teman sekelasnya, hidupnya yang membosankan berubah seru. Aku bisa menghilang, dan Seli bisa mengeluarkan petir. Ali sendiri punya rahasia kecil. Dia bisa berubah menjadi beruang raksasa. Kami bertiga kemudian bertualang ke tempat-tempat menakjubkan. Namanya Ali. Dia tahu sejak dulu dunia ini tidak sesederhana yang dilihat orang. Dan di atas segalanya, dia akhirnya tahu persahabatan adalah hal yang paling utama.", _
+								" KISAH DISAH ini sudah tertinggal puluhan tahun lebih. Maka ibarat seseorang yang ketinggalan kereta, bukan cuma kilau lampu dan getar rel yang telah hilang di tikungan sana, bahkan gerbong dan lokomotifnya sudah karatan dipensiunkan.", _ 
+								"Cerita ini sudah menguap puluhan tahun lebih. Maka ibarat embun menggelayut malas di daun rumput, rerumputan itu sudah menjadi hutan, tidak tersisa lagi kenangannya.", _
+								"Apakah kalian akan tetap percaya pilihan pertama hingga kematian menjemput? Atau kalian telah lama menyerah, dan memilih melanjutkan hidup dengan pilihan-pilihan lain? Ini adalah kisah tentang Jim, seorang laki-laki yang mulanya pengecut, tapi perlahan-lahan, tumbuh menjadi pemuda gagah berani yang dengan kokoh percaya atas cinta sejatinya.")
+	Harga = Array As String("76.000", "65.000", "110.000", "80.000", "78.000", "84.000", "94.000", "90.000", "80.000", "67.000")
+	
+	For i = 0 To Judul.Length - 1
+		Dim deskripsiPendek As String
+		If Deskripsi(i).Length > 100 Then
+			deskripsiPendek = Deskripsi(i).SubString2(0, 100) & "..." ' Memotong dan menambahkan "..."
+		Else
+			deskripsiPendek = Deskripsi(i) ' Jika kurang dari 100 karakter, tampilkan apa adanya
+		End If
+		
+		Lv1.AddTwoLinesAndBitmap(Judul(i), Penulis(i) & CRLF & Harga(i) & CRLF & deskripsiPendek & CRLF, LoadBitmap(File.DirAssets, i & ".jpg"))
+	Next
+	
+	Lv1.TwoLinesAndBitmap.ItemHeight=150dip
+	Lv1.TwoLinesAndBitmap.ImageView.Height=140dip
+	Lv1.TwoLinesAndBitmap.ImageView.Width=90dip
+	Lv1.TwoLinesAndBitmap.Label.Left=100dip
+	Lv1.TwoLinesAndBitmap.SecondLabel.Height=120dip
+	Lv1.TwoLinesAndBitmap.SecondLabel.Width = 300dip
+	Lv1.TwoLinesAndBitmap.SecondLabel.Left=100dip
+
+	
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Private Sub Lv1_ItemClick (Position As Int, Value As Object)
+	xui.MsgboxAsync("Judul : " & Judul(Position) & CRLF & "Penulis : " & Penulis(Position) & CRLF & "Harga : " & Harga(Position) & CRLF & "Deskripsi : " & Deskripsi(Position), "Detail" & "-" & Judul(Position))
+End Sub
